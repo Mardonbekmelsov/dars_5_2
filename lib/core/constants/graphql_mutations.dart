@@ -26,6 +26,28 @@ mutation updateProduct(\$id: ID!, \$title: String!, \$price: Float!, \$descripti
 }
 """;
 
+const String editProduct = """
+mutation editProduct(
+    \$id: ID!, 
+    \$title: String!, 
+    \$price: Float!, 
+    \$description: String!,
+) {
+    updateProduct(
+      id: \$id
+      changes: {
+        title: \$title
+        price: \$price
+        description: \$description
+      }
+    ) {
+      id
+      title
+      price
+    }
+}
+""";
+
 const String deleteProduct = """
 mutation deleteProduct(\$id: ID!){
   deleteProduct(id: \$id)

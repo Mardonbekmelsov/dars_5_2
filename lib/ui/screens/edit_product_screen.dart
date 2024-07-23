@@ -85,14 +85,14 @@ class _EditProductScreenState extends State<EditProductScreen> {
                   final client = GraphQLProvider.of(context).value;
 
                   client.mutate(MutationOptions(
-                      document: gql(updateProduct),
+                      document: gql(editProduct),
                       variables: {
                         'id': widget.product['id'],
                         'title': titleController.text,
                         'price': double.parse(priceController.text),
                         'description': descriptionController.text,
                         // 'categoryId': double.parse(categoryIdController.text),
-                        "images": [imageController.text],
+                        // "images": [imageController.text],
                       },
                       onCompleted: (dynamic resultData) {
                         print(resultData);
