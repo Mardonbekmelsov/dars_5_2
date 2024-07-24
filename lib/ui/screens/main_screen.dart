@@ -83,6 +83,9 @@ class MainScreen extends StatelessWidget {
                                   content: Text("Mahsulot ochirildi"),
                                 ),
                               );
+                              if (refetch != null) {
+                                refetch();
+                              }
                               // Navigator.pop(context);
                             }));
                       },
